@@ -10,7 +10,7 @@
   "author": "fyyyjjj@gmail.com",
   "license": "ISC",
   "engines": {
-    "node": ">=12"
+    "node": ">=12.10"
   },
   "dependencies": {
     "class-sanitizer": "0.0.5",
