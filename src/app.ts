@@ -4,6 +4,7 @@ import "reflect-metadata";
 import createDebug from "debug";
 import express from "express";
 import createLogger from "morgan";
+import { join } from "path";
 
 import { ConnectionOptions, createConnection } from "typeorm";
 import router from "./route";
@@ -20,6 +21,7 @@ const port = Number(process.env.PORT || 3000);
 const connectionOptions: ConnectionOptions = {
     type: "postgres",
     url: process.env.DATABASE_URL,
+    entities: [join(__dirname, "entities", "*.ts")],
     extra: {
         poolSize: 5,
     },
