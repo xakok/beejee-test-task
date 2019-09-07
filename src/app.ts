@@ -21,7 +21,7 @@ const port = Number(process.env.PORT || 3000);
 const connectionOptions: ConnectionOptions = {
     type: "postgres",
     url: process.env.DATABASE_URL,
-    entities: [join(__dirname, "entities", "*")],
+    entities: [join(__dirname, "entity", "*")],
     extra: {
         poolSize: 5,
     },
