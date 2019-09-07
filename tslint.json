@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      "object-literal-sort-keys": false,
+      "whitespace": [true, "check-module", "check-decl"],
+      "interface-name": false,
+      "variable-name": [true, "allow-snake-case"],
+      "no-console": false
+    },
+    "rulesDirectory": []
+}
