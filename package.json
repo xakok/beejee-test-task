@@ -9,6 +9,9 @@
   },
   "author": "fyyyjjj@gmail.com",
   "license": "ISC",
+  "engines": {
+    "node": ">=12"
+  },
   "dependencies": {
     "class-sanitizer": "0.0.5",
     "class-transformer": "^0.2.3",

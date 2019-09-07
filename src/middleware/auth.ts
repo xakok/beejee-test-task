@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from "express";
+import { verify } from "jsonwebtoken";
 import HttpError from "../util/http-error";
 
-const VALID_USERNAME = "admin";
-const VALID_PASSWORD = "123";
-
-export default function auth({ body: { username, password } }: Request, res: Response, next: NextFunction) {
-    if (username !== VALID_USERNAME || password !== VALID_PASSWORD) {
-        next(new HttpError(401, "Invalid credentials"));
+export default function auth({ body: { token } }: Request, _res: Response, next: NextFunction) {
+    try {
+        verify(token, process.env.SECRET_KEY!);
+    } catch (e) {
+        return next(new HttpError(401, "Invalid auth token"));
     }
-    return [res, next];
+    next();
 }
