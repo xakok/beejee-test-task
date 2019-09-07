@@ -22,6 +22,7 @@ const connectionOptions: ConnectionOptions = {
     type: "postgres",
     url: process.env.DATABASE_URL,
     entities: [join(__dirname, "entity", "*")],
+    synchronize: true,
     extra: {
         poolSize: 5,
     },
