@@ -1,4 +1,3 @@
-import { IsEmail, IsEnum } from "class-validator";
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 export enum TaskStatus {
@@ -10,19 +9,17 @@ export enum TaskStatus {
 export default class Task extends BaseEntity {
 
     @PrimaryGeneratedColumn()
-    public readonly id?: number;
+    public readonly id: number;
 
     @Column()
-    public username?: string;
-
-    @IsEmail()
-    @Column()
-    public email?: string;
+    public username: string;
 
     @Column()
-    public text?: string;
+    public email: string;
 
-    @IsEnum(TaskStatus)
     @Column()
-    public status?: TaskStatus = TaskStatus.PENDING;
+    public text: string;
+
+    @Column()
+    public status: TaskStatus = TaskStatus.PENDING;
 }

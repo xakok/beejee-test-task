@@ -1,12 +1,15 @@
 import express from "express";
 import jsonRoute from "../middleware/json-route";
+import createTask from "./create-task";
+import editTask from "./edit-task";
 import getTasks from "./get-tasks";
+import login from "./login";
 
 const router = express.Router();
 
 router.get("/", jsonRoute(getTasks));
-router.get("/env", (_, res) => {
-    res.json(process.env);
-});
+router.post("/create/", express.urlencoded(), jsonRoute(createTask));
+router.post("/edit/:id/", express.urlencoded(), jsonRoute(editTask));
+router.post("/login/", express.urlencoded(), jsonRoute(login));
 
 export default router;

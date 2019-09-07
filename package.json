@@ -10,6 +10,7 @@
   "author": "fyyyjjj@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "class-sanitizer": "0.0.5",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.0",
     "debug": "^4.1.1",
