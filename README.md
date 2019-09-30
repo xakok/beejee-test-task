@@ -4,7 +4,7 @@
 ## Configuration
 Copy file `.env.sample` to `.env` and fill it with configuration parameters
 
-##Build
+## Build
 `npm run build`
 
 ## Script
